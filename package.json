@@ -1,0 +1,46 @@
+{
+  "name": "object-find",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint ./src --cache --fix",
+    "test": "ava"
+  },
+  "dependencies": {
+    "ava": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.16.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!test/__mock__/**"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js)": [
+      "yarn eslint",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "object",
+    "find",
+    "js",
+    "tiny-module"
+  ],
+  "author": "mbalabash",
+  "license": "MIT"
+}
