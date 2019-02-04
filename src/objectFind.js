@@ -23,11 +23,11 @@ const objectFind = (object, value) => {
     if (Array.isArray(value)) {
       value.forEach((searchValue) => {
         if (matchValue(fieldValue, searchValue)) {
-          appendNewItemToResults(results, { path, search: [searchValue], value: fieldValue })
+          appendNewItemToResults(results, { path, found: [searchValue], value: fieldValue })
         }
       })
     } else if (matchValue(fieldValue, value)) {
-      appendNewItemToResults(results, { path, search: [value], value: fieldValue })
+      appendNewItemToResults(results, { path, found: [value], value: fieldValue })
     }
   })
 
