@@ -1,3 +1,3 @@
-const objectFind = require('./src/objectStringFind')
+const objectStringFind = require('./src/objectStringFind')
 
-module.exports = objectFind
+module.exports = objectStringFind

@@ -1,5 +1,5 @@
 {
-  "name": "object-string-find",
+  "name": "object-str-find",
   "version": "0.1.0",
   "description": "Find substring or match regexp in the object and his inner objects.",
   "main": "index.js",
