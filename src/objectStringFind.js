@@ -12,7 +12,7 @@ const checkArgs = (object, value) => {
   }
 }
 
-const objectFind = (object, value) => {
+const objectStringFind = (object, value) => {
   checkArgs(object, value)
   const results = new Map()
   const entries = extractObjectEntries(object)
@@ -34,4 +34,4 @@ const objectFind = (object, value) => {
   return Array.from(results.values())
 }
 
-module.exports = objectFind
+module.exports = objectStringFind

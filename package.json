@@ -1,7 +1,7 @@
 {
-  "name": "object-find",
+  "name": "object-string-find",
   "version": "0.1.0",
-  "description": "",
+  "description": "Find substring or match regexp in the object and his inner objects.",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint ./src --cache --fix",
@@ -37,6 +37,8 @@
   },
   "keywords": [
     "object",
+    "string",
+    "regexp",
     "find",
     "js",
     "tiny-module"
