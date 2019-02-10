@@ -66,3 +66,18 @@ test('should correctly find values in object', (t) => {
     ],
   )
 })
+
+test('should return empty result', (t) => {
+  t.deepEqual(objectStringFind(new Date(), 'zxc'), [])
+  t.deepEqual(objectStringFind(new RegExp(), 'zxc'), [])
+  t.deepEqual(objectStringFind([], 'zxc'), [])
+  t.deepEqual(objectStringFind({}, 'zxc'), [])
+  t.deepEqual(objectStringFind(Object.create(null), 'zxc'), [])
+})
+
+test('should throw an error', (t) => {
+  t.throws(() => objectStringFind(null, 'zxc'))
+  t.throws(() => objectStringFind(undefined, 'zxc'))
+  t.throws(() => objectStringFind(1123, 'zxc'))
+  t.throws(() => objectStringFind('qwe', 'zxc'))
+})

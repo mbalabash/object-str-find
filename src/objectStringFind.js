@@ -12,23 +12,27 @@ const checkArgs = (object, value) => {
   }
 }
 
+/**
+ * Find substring or match regexp in the object and his inner objects.
+ * @param {Object} object Target object
+ * @param {(String|RegExp|(String|RegExp)[])}
+ * String or regexp or array of string and/or regexp values for searching in object properties.
+ * @returns {Array}
+ */
 const objectStringFind = (object, value) => {
   checkArgs(object, value)
   const results = new Map()
   const entries = extractObjectEntries(object)
   const targetFields = getOnlyTargetFields(entries)
+  const predictors = Array.isArray(value) ? value : [value]
 
   targetFields.forEach((field) => {
     const { path, value: fieldValue } = field
-    if (Array.isArray(value)) {
-      value.forEach((searchValue) => {
-        if (matchValue(fieldValue, searchValue)) {
-          appendNewItemToResults(results, { path, found: [searchValue], value: fieldValue })
-        }
-      })
-    } else if (matchValue(fieldValue, value)) {
-      appendNewItemToResults(results, { path, found: [value], value: fieldValue })
-    }
+    predictors.forEach((predictor) => {
+      if (matchValue(fieldValue, predictor)) {
+        appendNewItemToResults(results, { path, found: [predictor], value: fieldValue })
+      }
+    })
   })
 
   return Array.from(results.values())
