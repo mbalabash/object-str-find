@@ -43,6 +43,11 @@
     "js",
     "tiny-module"
   ],
+  "homepage": "https://github.com/mbalabash/object-str-find/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbalabash/object-str-find"
+  },
   "author": "mbalabash",
   "license": "MIT"
 }
